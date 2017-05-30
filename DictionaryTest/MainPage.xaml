@@ -5,9 +5,60 @@
     xmlns:local="using:DictionaryTest"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Loaded="MainPage_Loaded">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0" Margin="10">
+            <TextBlock Text="Hindi Dictionary Test v0.00.02 5/29/17"/>
+            <TextBox Name="WordTextBox" Margin="10" Header="Hindi Word"/>
+            <TextBox Name="DefTextBox" Margin="10" Height="100" Header="Definition"/>
+            <Button Content="Add Definition" Margin="10" Click="AddDefinition_Click"/>
+            <TextBlock Name="GoogleResultsBox" Margin="10" Height="350px"/>
+        </StackPanel>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Button Name="deleteBtn" Content="Clear Definitions" Margin="10" IsEnabled="False" 
+                    Click="ClearDefinitions_Click" Grid.Row="0"></Button>
+            
+            <ListView x:Name="DefList" SelectionChanged="DefList_Selected" Grid.Row="1"
+                      ScrollViewer.IsVerticalRailEnabled="True" ScrollViewer.VerticalScrollMode="Enabled">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Border Margin="5" BorderBrush="Black" BorderThickness="1">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="5,0,0,0" Grid.Row="0" x:Name="WordText" TextWrapping="Wrap" 
+                                                       Text="{Binding term}" FontSize="28"/>
+                                    <TextBlock Margin="5,0,0,0" Grid.Row="1" x:Name="DefText" TextWrapping="Wrap" FontSize="18"
+                                                       Text="{Binding definition}"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    </Style>
+                </ListView.ItemContainerStyle>
+            </ListView>
+          
+        </Grid>
 
     </Grid>
 </Page>

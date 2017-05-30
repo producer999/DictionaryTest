@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="DictionaryTest.DetailsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DictionaryTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Orientation="Horizontal">
+        <StackPanel Orientation="Vertical" Width="400">
+            <Button Name="backBtn" Content="Go Back" Margin="10" IsEnabled="True" Click="BackButton_Click"></Button>
+            <TextBox Name="Details_Word" Margin="10" Header="Hindi Word"/>
+            <TextBox Name="Details_UserDefinition" Margin="10" Header="User Translation" TextChanged="Definition_Edited"/>
+            <TextBox Name="Details_GoogleTranslation" Margin="10" IsReadOnly="True" Header="Google Translation"/>
+            <Button Name="googleBtn" Content="Refresh" Margin="10" IsEnabled="True" Click="GoogleButton_Click"></Button>
+            <TextBox Name="Details_DictTranslation" Margin="10" IsReadOnly="True" Header="Imported Translation"/>
+            <TextBox Name="Details_AltTranslation" Margin="10" IsReadOnly="True" Height="100" Header="Alternate Translations"/>
+            <TextBox Name="Details_AltForms" Margin="10" Height="100" Header="Alternate Forms" TextChanged="Definition_Edited"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Width="400">
+            <Button Name="updateBtn" Content="Update" Margin="10" IsEnabled="False" Click="UpdateButton_Click"></Button>
+            <TextBox Name="Details_POS" Margin="10" IsReadOnly="True" Header="Part of Speech"/>
+            <TextBox Name="Details_Gender" Margin="10" IsReadOnly="True" Header="Gender"/>
+            <TextBox Name="Details_Example" Margin="10" Height="100" Header="Example Sentence" TextChanged="Definition_Edited"/>
+            
+ 
+
+        </StackPanel>
+    </StackPanel>
+    
+    
+</Page>

@@ -22,6 +22,10 @@ namespace DictionaryTest
     /// </summary>
     sealed partial class App : Application
     {
+        //Globally accessible database path
+        public static string DB_PATH;
+        private DBHelper dbh = new DBHelper();
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -30,8 +34,17 @@ namespace DictionaryTest
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-        }
 
+            //if databse is not created i.e. it already exists, set the DB_PATH manually
+            if(!dbh.CreateDatabase("DefinitionTest1.sqlite"))
+            {
+                DB_PATH = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "DefinitionTest1.sqlite");
+            }
+            
+           
+            
+        }
+        
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used such as when the application is launched to open a specific file.
@@ -42,7 +55,7 @@ namespace DictionaryTest
 #if DEBUG
             if (System.Diagnostics.Debugger.IsAttached)
             {
-                this.DebugSettings.EnableFrameRateCounter = true;
+                this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
             Frame rootFrame = Window.Current.Content as Frame;
