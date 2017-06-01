@@ -10,7 +10,7 @@
     <StackPanel Orientation="Horizontal">
         <StackPanel Orientation="Vertical" Width="400">
             <Button Name="backBtn" Content="Go Back" Margin="10" IsEnabled="True" Click="BackButton_Click"></Button>
-            <TextBox Name="Details_Word" Margin="10" Header="Hindi Word"/>
+            <TextBox Name="Details_Word" Margin="10" Header="Hindi Word" TextChanged="Definition_Edited"/>
             <TextBox Name="Details_UserDefinition" Margin="10" Header="User Translation" TextChanged="Definition_Edited"/>
             <TextBox Name="Details_GoogleTranslation" Margin="10" IsReadOnly="True" Header="Google Translation"/>
             <Button Name="googleBtn" Content="Refresh" Margin="10" IsEnabled="True" Click="GoogleButton_Click"></Button>
@@ -20,7 +20,12 @@
 
         </StackPanel>
         <StackPanel Orientation="Vertical" Width="400">
-            <Button Name="updateBtn" Content="Update" Margin="10" IsEnabled="False" Click="UpdateButton_Click"></Button>
+            <StackPanel Orientation="Horizontal" Height="Auto">
+                <Button Name="updateBtn" Content="Update" Margin="10" IsEnabled="False" Click="UpdateButton_Click"></Button>
+                <Button Name="deleteOneBtn" Content="Delete" Margin="10" IsEnabled="True" Click="DeleteOneButton_Click"></Button>
+                <TextBlock Name="Status_updateBtn" Margin="10" Text=""/>
+            </StackPanel>
+            
             <TextBox Name="Details_POS" Margin="10" IsReadOnly="True" Header="Part of Speech"/>
             <TextBox Name="Details_Gender" Margin="10" IsReadOnly="True" Header="Gender"/>
             <TextBox Name="Details_Example" Margin="10" Height="100" Header="Example Sentence" TextChanged="Definition_Edited"/>

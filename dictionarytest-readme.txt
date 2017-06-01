@@ -20,7 +20,18 @@ Coming Soon:
 ****do a test of reading in definitions from a text file and parsing them
 ****store alternate definitions, alternate forms and examples as JSON in the databse
 ****if word is changed on the details page, immediately change the google and imported definitions in the textboxes and enable the edit button
+****add stop button during import that cancels the import where it is
 
+
+v 0.00.03 5/31/2017
+-add textblock next to update button to say if update was succesful
+-add a button on details page to delete current definition
+-add ProgressRing after adding definition while it is getting translation from Google
+-fixed example sentence not displaying on details page
+-add ability to sort dictionary list by different fields with ComboBox
+-maintain current list sort status so when you switch pages using NavigationCacheMode=Required on MainPage
+-fixed Update button on details page didnt become active when changing just the hindi term
+-performed successful test of reading in lines from the source file
 
 
 v 0.00.02 5/29/2017

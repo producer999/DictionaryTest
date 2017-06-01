@@ -41,7 +41,7 @@ namespace DictionaryTest
                 DB_PATH = Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "DefinitionTest1.sqlite");
             }
             
-           
+            
             
         }
         

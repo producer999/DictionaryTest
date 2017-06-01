@@ -77,7 +77,7 @@ namespace DictionaryTest
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            Frame.Navigate(typeof (MainPage));
         }
 
         private void UpdateButton_Click(object sender, RoutedEventArgs e)
@@ -91,6 +91,7 @@ namespace DictionaryTest
                 currentDef.example = Details_Example.Text;
 
             dbh.UpdateDefinition(currentDef);
+            Status_updateBtn.Text = "Update Successful!";
             updateBtn.IsEnabled = false;
 
         }
@@ -106,7 +107,11 @@ namespace DictionaryTest
             {
                 Details_GoogleTranslation.Text = def.googleDefinition;
             }
-                
+            if (!String.IsNullOrEmpty(def.example))
+            {
+                Details_Example.Text = def.example;
+            }
+
         }
 
         private void Definition_Edited(object sender, TextChangedEventArgs e)
@@ -138,6 +143,12 @@ namespace DictionaryTest
                 Windows.UI.Popups.MessageDialog md = new Windows.UI.Popups.MessageDialog("Hindi Word field must not be blank!");
                 await md.ShowAsync();
             }
+        }
+
+        private void DeleteOneButton_Click(object sender, RoutedEventArgs e)
+        {
+            dbh.DeleteDefinition(currentDef.id);
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

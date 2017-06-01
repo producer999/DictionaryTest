@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
+using Windows.Storage.Pickers;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -20,6 +24,18 @@ using Windows.UI.Xaml.Navigation;
 
 namespace DictionaryTest
 {
+    public enum SortStatus
+    {
+        SortByIdAscend,
+        SortByIdDescend,
+        SortByHindiAscend,
+        SortByHindiDescend,
+        SortByDefAscend,
+        SortByDefDescend
+    }
+
+
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -27,6 +43,7 @@ namespace DictionaryTest
     {
         private DBHelper dbh = new DBHelper();
         private ObservableCollection<Definition> dictionary = new ObservableCollection<Definition>();
+        private SortStatus sortStatus = SortStatus.SortByIdDescend;
 
         public MainPage()
         {
@@ -37,19 +54,27 @@ namespace DictionaryTest
         {
             if (WordTextBox.Text != "")
             {
+                AddProgress.IsActive = true;
+                AddProgress.Visibility = Visibility.Visible;
+
                 Uri uri = new Uri("https://translation.googleapis.com/language/translate/v2?key=AIzaSyC1uP0Uw1jEoDFv61cIzLVK2bP4J3E8vaw&source=hi&target=en&q=" + WordTextBox.Text);
 
                 using (HttpClient client = new HttpClient())
                 {
                     HttpResponseMessage responseGet = await client.GetAsync(uri);
                     string response = await responseGet.Content.ReadAsStringAsync();
-                    GoogleResultsBox.Text = response;
+                    //GoogleResultsBox.Text = response;
                     GoogleTranslationResponse res = Newtonsoft.Json.JsonConvert.DeserializeObject<GoogleTranslationResponse>(response);
                     dbh.Insert(new Definition(WordTextBox.Text, DefTextBox.Text, res.data.translations[0].translatedText));
                 }
 
                 WordTextBox.Text = "";
                 DefTextBox.Text = "";
+
+                AddProgress.IsActive = false;
+                AddProgress.Visibility = Visibility.Collapsed;
+
+                GoogleResultsBox.Text = "Definition Added to Database.";
                 RefreshDefinitions();
             }
             else
@@ -66,8 +91,10 @@ namespace DictionaryTest
             {
                 deleteBtn.IsEnabled = true;
             }
-            DefList.ItemsSource = dictionary.OrderByDescending(i => i.id).ToList();
+            DictionarySort(sortStatus);
+            GoogleResultsBox.Text = "";
         }
+
 
         private void RefreshDefinitions()
         {
@@ -76,7 +103,7 @@ namespace DictionaryTest
             {
                 deleteBtn.IsEnabled = true;
             }
-            DefList.ItemsSource = dictionary.OrderByDescending(i => i.id).ToList();
+            DictionarySort(sortStatus);
         }
 
         private void ClearDefinitions_Click(object sender, RoutedEventArgs e)
@@ -96,6 +123,113 @@ namespace DictionaryTest
                 Frame.Navigate(typeof (DetailsPage), selectedDef);
             }
                    
+        }
+
+        private void SortSelection_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            var cbox = sender as ComboBox;
+            if(cbox != null)
+            {
+                var item = (cbox.SelectedItem as ComboBoxItem).Content;
+                var sortSelection = item as string;
+                //Status_Sorting.Text = sortSelection;
+
+                dictionary = dbh.GetAllDefinitions();
+                
+                switch(sortSelection)
+                {
+                    case "Id - Ascending":
+                        DictionarySort(SortStatus.SortByIdAscend);
+                        break;
+                    case "Id - Descending":
+                        DictionarySort(SortStatus.SortByIdDescend);
+                        break;
+                    case "Hindi Term - Ascending":
+                        DictionarySort(SortStatus.SortByHindiAscend);
+                        break;
+                    case "Hindi Term - Descending":
+                        DictionarySort(SortStatus.SortByHindiDescend);
+                        break;
+                    case "Translation - Ascending":
+                        DictionarySort(SortStatus.SortByDefAscend);
+                        break;
+                    case "Translation - Descending":
+                        DictionarySort(SortStatus.SortByDefDescend);
+                        break;
+                }
+                
+                  
+            }
+        
+        }
+
+        private void DictionarySort(SortStatus status)
+        {
+            switch (status)
+            {
+                case SortStatus.SortByIdAscend:
+                    DefList.ItemsSource = dictionary.OrderBy(i => i.id).ToList();
+                    sortStatus = SortStatus.SortByIdAscend;
+                    break;
+                case SortStatus.SortByIdDescend:
+                    DefList.ItemsSource = dictionary.OrderByDescending(i => i.id).ToList();
+                    sortStatus = SortStatus.SortByIdDescend;
+                    break;
+                case SortStatus.SortByHindiAscend:
+                    DefList.ItemsSource = dictionary.OrderBy(i => i.term).ToList();
+                    sortStatus = SortStatus.SortByHindiAscend;
+                    break;
+                case SortStatus.SortByHindiDescend:
+                    DefList.ItemsSource = dictionary.OrderByDescending(i => i.term).ToList();
+                    sortStatus = SortStatus.SortByHindiDescend;
+                    break;
+                case SortStatus.SortByDefAscend:
+                    DefList.ItemsSource = dictionary.OrderBy(i => i.definition).ToList();
+                    sortStatus = SortStatus.SortByDefAscend;
+                    break;
+                case SortStatus.SortByDefDescend:
+                    DefList.ItemsSource = dictionary.OrderByDescending(i => i.definition).ToList();
+                    sortStatus = SortStatus.SortByDefDescend;
+                    break;
+            }
+        }
+
+        private async void ImportDefinitions_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                FileOpenPicker picker = new FileOpenPicker();
+                picker.SuggestedStartLocation = PickerLocationId.Desktop;
+                picker.FileTypeFilter.Add(".txt");
+                StorageFile file = await picker.PickSingleFileAsync();
+                if (file != null)
+                {
+                    ImportProgress.IsActive = true;
+                    ImportProgress.Visibility = Visibility.Visible;
+
+                    var lines = await FileIO.ReadLinesAsync(file);
+                    List<string> importedList = lines.ToList<string>();
+
+                    foreach(var i in importedList)
+                    {
+                        Debug.WriteLine(i);
+                    }
+                    //return true;
+                    ImportProgress.IsActive = false;
+                    ImportProgress.Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    //return false;
+                }
+            }
+            catch
+            {
+                ImportResultsBox.Text = "Error in opening file.\n\nOpenFile() Something went wrong.";
+                ImportProgress.IsActive = false;
+                ImportProgress.Visibility = Visibility.Collapsed;
+                //return false;
+            }
         }
     }
 }
