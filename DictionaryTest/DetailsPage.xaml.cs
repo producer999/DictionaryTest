@@ -102,7 +102,7 @@ namespace DictionaryTest
             currentDef = def;
 
             Details_Word.Text = def.term;
-            Details_UserDefinition.Text = def.definition;
+            Details_DictTranslation.Text = def.importedDefinition;
             if(!String.IsNullOrEmpty(def.googleDefinition))
             {
                 Details_GoogleTranslation.Text = def.googleDefinition;

@@ -17,10 +17,17 @@ Coming Soon:
 ****when adding definitions, only refresh the newest one instead of refreshing the entire dictionary (prevent flikr)
 ****when pressing Enter in def entry fields, activate the Add Contact Button
 ****do a check on Add Contact that the Word is not in english, devanagari only
-****do a test of reading in definitions from a text file and parsing them
 ****store alternate definitions, alternate forms and examples as JSON in the databse
 ****if word is changed on the details page, immediately change the google and imported definitions in the textboxes and enable the edit button
 ****add stop button during import that cancels the import where it is
+****convert to MVVM
+****add timer to show how long an import took
+
+
+v 0.00.04 6/3/17
+-if exception thrown on a certain definition on import, continue and just skip that one
+	-list the ones that it missed at the end
+-added import button to import from formatted text file to the database
 
 
 v 0.00.03 5/31/2017

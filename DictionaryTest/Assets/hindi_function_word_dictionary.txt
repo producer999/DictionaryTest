@@ -97,10 +97,10 @@
 [उनके]{}”she"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,RESPECT,HER,unake)<H,0,0>;उनके कपड़े अच्छे हैं।
 [इनकी]{}”he"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,RESPECT,HIS,inakI)<H,0,0>;इनकी किताब अच्छी है।
 [इनकी]{}”she"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,RESPECT,HER,inakI)<H,0,0>;इनकी किताब अच्छी है।
-[अपने]{}”he(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HIS,apane)H,0,0>;गोपाल अपने स्कूल जाता है।
-[अपने]{}”she(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HER,apane)H,0,0>;शीला अपने स्कूल जाती है।
-[अपन्]{}”he(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HIS,apanA)H,0,0>;गोपाल अपना पाठ याद करता है।
-[अपन्]{}”she(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HER,apanA)H,0,0>;शीला अपना पाठ याद करती है।
+[अपने]{}”he"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HIS,apane)<H,0,0>;गोपाल अपने स्कूल जाता है।
+[अपने]{}”she"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HER,apane)<H,0,0>;शीला अपने स्कूल जाती है।
+[अपन्]{}”he"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HIS,apanA)<H,0,0>;गोपाल अपना पाठ याद करता है।
+[अपन्]{}”she"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HER,apanA)<H,0,0>;शीला अपना पाठ याद करती है।
 [इनक्]{}”they"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HIS,RESPECT,inakA)<H,0,0>;इनका घर सुंदर क्या है।
 [इनक्]{}”they"(PRON,ANIMT,GENTV,GENTV_ATTRBTV,HER,RESPECT,inakA)<H,0,0>;इनका घर सुंदर क्या है।
 [इसक्]{}”it"(PRON,GENTV,GENTV_ATTRBTV,ITS,isakA)<H,0,0>;इसका रंग काला है।
@@ -245,7 +245,7 @@
 [जबतक]{}”as long as"(CONJ,JOINING,AS_LONG_AS,jabawaka)<H,0,0>;गोपाल चला गया जब तक शीला आती। 
 [जब भी]{}”whenever"(CONJ,JOINING,WHENEVER,jaba BI)<H,0,0>;जब भी मैं जाना चाहती हूँ मैं नही जा पाती।
 [जैसे ही]{}”as soon as"(CONJ,JOINING,as_soon_as,jEse hI)<H,0,0>;गोपाल जैसे ही अन्दर आया चोर भाग गया।
-[हाँला कि]{}”although"(CONJ,JOINING,ALTHOUGH,hAMzlA ki)<H,0,0>;जवाब नहीं आया हाँला कि पत्र लिखा है।
+[हाँला कि]{}”"(CONJ,JOINING,ALTHOUGH,hAMzlA ki)<H,0,0>;जवाब नहीं आया हाँला कि पत्र लिखा है।
 [कहीं से भी]{}”whencesoever"(CONJ,JOINING,WHENSOEVER,kahIM se BI)<H,0,0>;पत्र कहीं से भी आ सकता है।
 [किसी कारण से भी]{}”whencever"(CONJ,JOINING,WHENCEVER,kisI kAraNa se BI)<H,0,0>;वह काम नहीं रना चाहती तो किसी कारण से भी टाल सकती थी।
 [जहाँ कहीं भी]{}”wherever"(CONJ,JOINING,PLACE,WHEREVER,jaba waka ki)<H,0,0>;मैं जहाँ कहीं भी जाती हूँ तुम वहाँ चले आते हो।
@@ -257,7 +257,7 @@
 [क्या]{}”what"(CONJ,SPAION,WHAT,kyA)<H,0,0>;स्त्री क्या पुरुष सब बराबर होते हैं।
 [नहीं तो]{}”otherwise"(CONJ,SPAION,OTHERWISE,nahIM wo)<H,0,0>;गोपाल ने दवा खा ली नहीं तो वह ठीक न होता। 
 [कि]{}”that"(CONJ,SPAION,THAT,ki)<H,0,0>;शीला जानती है कि स्कूल बंद है।
-[ऊर्फ]{}”alias”(CONJ,SPAION,ALIAS,urPa)<H,0,0>;alias
+[ऊर्फ]{}”alias”(CONJ,SPAION,ALIAS,urPa)<H,0,0>;
 [लेकिन]{}”but"(CONJ,OPOSIT,BUT,lekina)<H,0,0>;गोपाल आया लेकिन चला गया।
 [मगर]{}”but"(CONJ,OPOSIT,BUT,magara)<H,0,0>;गोपाल आया मगर चला गया।
 [किन्तु]{}”but"(CONJ,OPOSIT,BUT,kinwu)<H,0,0>;शीला आई किन्तु चली गई।
@@ -335,8 +335,8 @@
 [ऊह!]{}”ouch(scn>distress)"(INTJ,SAD,PAIN,EXPLN,SIGH,Uha)<H,0,0>;ऊह!मेरे कमर में बहुत दर्द है।
 [उई!]{}”ouch(scn>distress)"(INTJ,SAD,PAIN,EXPLN,SIGH,F,Uha)<H,0,0>;उई!मेरे पैर में काँटा चुभ गया।
 [उई माँ!]{}”alas(scn>distress)"(INTJ,SAD,ALAS,SIGH,F,Uha)<H,0,0>;उई माँ!मेरा सिर दर्द से फटा जा रहा है।
-[हा-हा!]{}”alas(scn>distress)"(INTJ,SAD,ALAS,CRY,EXPLN,hA-hA)<H,0,0>हा-हा!मेरा पूरा घर आग में जल गया।
-[आह!]{}”oh(scn>distress)"(INTJ,SAD,OH,PAIN,EXPLN,aha)<H,0,0>आह!मेरा हाथ दर्द के कारण उठ नही सकता।
+[हा-हा!]{}”alas(scn>distress)"(INTJ,SAD,ALAS,CRY,EXPLN,hA-hA)<H,0,0>;हा-हा!मेरा पूरा घर आग में जल गया।
+[आह!]{}”oh(scn>distress)"(INTJ,SAD,OH,PAIN,EXPLN,aha)<H,0,0>;आह!मेरा हाथ दर्द के कारण उठ नही सकता।
 [ठीक!]{}”okay"(INTJ,ACCEPT,OKAY,EXPLN,TIka)<H,0,0>;ठीक!मैं स्कूल जाता हूँ।
 [बिलकुल!]{}”well"(INTJ,ACCEPT,WELL,EXPLN,bilakula)<H,0,0>;बिलकुल!मैं यह काम कर लूंगा।
 [अच्छा!]{}”good"(INTJ,ACCEPT,GOOD,EXPLN,acCA)<H,0,0>;अच्छा!मैं यह काम कर लूंगा।
@@ -351,7 +351,7 @@
 [दुर!]{}”out of the way"(INTJ,SCORN,OUT OF THE WAY,EXPLN,xura)<H,0,0>;दुर!यहाँ से भाग जाओ।
 [हट!]{}”out of the way"(INTJ,SCORN,AVERN,EXPLN,OUT_OF_THE_WAY,hata)<H,0,0>;हट!यह बात एकदम गलत है।
 [चुप!]{}”stop it"(INTJ,SCORN,WHISP,STOP IT,EXPLN,cupa)<H,0,0>;चुप!अधिक निन्दा मत कर।
-[चुप रहो!]{}”stop it"(INTJ,SCORN,WHISP,STOP IT,EXPLN,cupa)<H,0,0>;stop it
+[चुप रहो!]{}”stop it"(INTJ,SCORN,WHISP,STOP IT,EXPLN,cupa)<H,0,0>;
 [भग!]{}”out of the way"(INTJ,SCORN,AVERN,EXPLN,OUT_OF_THE_WAY,Baga)<H,0,0>;भग!अधिक झूठ मत बोल।
 [ऊँह!]{}”"(INTJ,SCORN,DENIAL,EXPLN,UGH,UaMzha)<H,0,0>;ऊँह!गर्मी से मेरा बुरा हाल हो रहा है।
 [ऊँहूँ!]{}”ugh"(INTJ,SCORN,DENIAL,EXPLN,UGH,UaMzhUaMz)<H,0,0>;ऊँहूँ!तुम लोग यहाँ बहुत शोर मचा रहे हो।
@@ -388,22 +388,22 @@
 [बस!]{}”enough"(INTJ,INDICATION,ENOUGH,basa)<H,0,0>;क्यों!तुम्हें स्कूल नहीं जाना है?
 [सावधान!]{}”watch out"(INTJ,ATENTIVE,WARNING,watch_out,mAvaXAna)<H,0,0>;गोपाल कोई आ रहा है ईधर।सावधान!
 [देखो!]{}”look out"(INTJ,ATENTIVE,WARNING,look_out,xeKo)<H,0,0>;देखो!लगता है कोई ईधर आ रहा है।
-[अलविदा!]{}”adieu"(INTJ,ADIEV,alavixA)<H,0,0>;farewell
-[अभिवादन!]{}”okay"(INTJ,ADIEV,aBivAxana)<H,0,0>;okay
-[ओ हो!]{}”a hoy"(INTJ,ADIEV,o ho)<H,0,0>;a hoy
-[अफसोस!]{}”a hoy"(INTJ,ADIEV,aPasosa)<H,0,0>;a hoy
-[ओह!]{}”oh"(INTJ,ADIEV,oha)<H,0,0>;oh
-[हायराम!]{}”alas"(INTJ,ADIEV,hAyarAma)<H,0,0>;alas
-[आमीन!]{}”amen"(INTJ,ADIEV,AmIna)<H,0,0>;amen
-[तथास्तु!]{}”okay"(INTJ,ADIEV,wWAswu)<H,0,0>;okay
-[सचमुच!]{}”really"(INTJ,ADIEV,sacamuc)<H,0,0>;really
-[ठहरो!]{}”stop"(INTJ,ADIEV,Taharo)<H,0,0>;stop
-[रुको!]{}”stop"(INTJ,ADIEV,roko)<H,0,0>;stop
-[आगे बढ़ो!]{}”go ahead"(INTJ,ADIEV,Age baDZo)<H,0,0>;go ahead
-[दूर हटो!]{}”go away"(INTJ,ADIEV,xUra hato)<H,0,0>;go away
-[भगवान कसम!]{}”by God"(INTJ,ADIEV,BagavAna kasama)<H,0,0>;by god
-[कसम से!]{}”i swear"(INTJ,ADIEV,kasama se)<H,0,0>;i swear
-[तुम्हारा कल्याण हो!]{}”bless you"(INTJ,ADIEV,tumhArA kalyAna ho)<H,0,0>;bless you
+[अलविदा!]{}”adiev"(INTJ,ADIEV,alavixA)<H,0,0>;
+[अभिवादन!]{}”okay"(INTJ,ADIEV,aBivAxana)<H,0,0>;
+[ओ हो!]{}”a hoy"(INTJ,ADIEV,o ho)<H,0,0>;
+[अफसोस!]{}”a hoy"(INTJ,ADIEV,aPasosa)<H,0,0>;
+[ओह!]{}”"(INTJ,ADIEV,oha)<H,0,0>;
+[हायराम!]{}”alas"(INTJ,ADIEV,hAyarAma)<H,0,0>;
+[आमीन!]{}”amen"(INTJ,ADIEV,AmIna)<H,0,0>;
+[तथास्तु!]{}”okay"(INTJ,ADIEV,wWAswu)<H,0,0>;
+[सचमुच!]{}”really"(INTJ,ADIEV,sacamuc)<H,0,0>;
+[ठहरो!]{}”stop"(INTJ,ADIEV,Taharo)<H,0,0>;
+[रुको!]{}”stop"(INTJ,ADIEV,roko)<H,0,0>;
+[आगे बढ़ो!]{}”go ahead"(INTJ,ADIEV,Age baDZo)<H,0,0>;
+[दूर हटो!]{}”go away"(INTJ,ADIEV,xUra hato)<H,0,0>;
+[भगवान कसम!]{}”by God"(INTJ,ADIEV,BagavAna kasama)<H,0,0>;
+[कसम से!]{}”i swear"(INTJ,ADIEV,kasama se)<H,0,0>;
+[तुम्हारा कल्याण हो!]{}”blees you"(INTJ,ADIEV,tumhArA kalyAna ho)<H,0,0>;
 [आच्छु!]{}”ahchoo"(INTJ)<H,0,0>;(used in writing to indicate the noise made by sb sneezing)
 [हुँ!]{}”ahem"(INTJ)<H,0,0>;Ahem, might I make a suggestion?(used in writing to indicate the noise made when clearing the throat, esp to get sb's attention or express disapproval)
 [वाही-वाही!]{}”ahoy"(INTJ)<H,0,0>;Ahoy there! • Ship ahoy! (= there is a ship in sight)(used by people in boats to attract attention)
@@ -412,10 +412,10 @@
 [अच्छा!]{}”ah(scn>surprise)"(INTJ)<H,0,0>;Ah, there you are!(used to express surprise, delight, admiration, sympathy, understanding, etc or to introduce a point of disagreement)
 [ओह!]{}”ah(scn>sympathy)"(INTJ)<H,0,0>;Ah, but that may not be true!(used to express surprise,delight, admiration, sympathy, understanding, etc or to introduce a point of disagreement)
 [अच्छा!]{}”ah well(scn>understanding)"(INTJ)<H,0,0>;Ah well, never mind.
-[के आस-पास]{}"around"(POSTPOSTN,LANGDIVER-PREP,AROUND,ke_AsapAsa)<H,0,0>;around
+[के आस-पास]{}"around"(POSTPOSTN,LANGDIVER-PREP,AROUND,ke_AsapAsa)<H,0,0>;
 [से]{}"from"(POSTPOSTN,LANGDIVER-PREP)<H,0,0>;Water the plants at a distance from the stem so that the stem does not get wet.(used to show where sb/sth starts)
-[के बीच]{}"between"(POSTPOSTN,LANGDIVER-PREP,BETWEEN,ke_bIca)<H,0,0>;between
-[के पीछे]{}"behind"(POSTPOSTN,LANGDIVER-PREP,BEHIND,ke_pICe)<H,0,0>;behind
+[के बीच]{}"between"(POSTPOSTN,LANGDIVER-PREP,BETWEEN,ke_bIca)<H,0,0>;
+[के पीछे]{}"behind"(POSTPOSTN,LANGDIVER-PREP,BEHIND,ke_pICe)<H,0,0>;
 [के अनुसार]{}"as per"(POSTPOSTN,LANGDIVER-PREP,AS_PER,ke_anusAra)<H,0,0>;Water thsse crop as per the requirement.(following sth that has been decided)
 [के बीच में]{}"across"(POSTPOSTN,LANGDIVER-PREP,ACROSS,ke_bIca_meM)<H,0,0>;A view held across all sections of the community.
 [के आरपार]{}"across"(POSTPOSTN,LANGDIVER-PREP)<H,0,0>;Draw a line across the page.
@@ -464,7 +464,7 @@
 [से परे]{}”beyond"(CASE-MARK,PLACE,BEYOND,se pare)<H,0,0>;शहर से परे गाँव है।
 [से आगे]{}"ahead of"(CASE-MARK,PLACE,AHEAD_OF,se Age)<H,0,0>;गोपाल शीला से आगे है।
 [से ऊपर]{}"above"(CASE-MARK,PLACE,ABOVE,se Upara)<H,0,0>;लाल पतंग काली पतंग से ऊपर है।
-[से नीचे]{}"down from"CASE-MARK,PLACE,DOWN_FROM,se nIce)<H,0,0>;गोपाल पेड़ से नीचे उतरता है।
+[से नीचे]{}"down from"(CASE-MARK,PLACE,DOWN_FROM,se nIce)<H,0,0>;गोपाल पेड़ से नीचे उतरता है।
 [से दूर]{}"far from"(CASE-MARK,PLACE,FAR_FROM,se xUra)<H,0,0>;स्कूल घर से दूर है।
 [के तले]{}”under"(CASE-MARK,PLACE,UNDER,ke wale)<H,0,0>;पेड़ के तले छाँव है।
 [के सामने]{}”infront of"(CASE-MARK,PLACE,INFRONT_OF,ke sAmane)<H,0,0>;घर के सामने कुआँ है।     
@@ -473,7 +473,7 @@
 [के यहाँ]{}”in"(CASE-MARK,PLACE,ke yhAMz)<H,0,0>;गोपाल के यहाँ एक कुआँ है।
 [से दूर]{}”far from "(CASE-MARK,PLACE,FOR_FROM,se xUra)<H,0,0>;घर स्कूल से दूर है।
 [से आगे]{}”ahead from"(CASE-MARK,PLACE,AHEAD_FROM,se Age)<H,0,0>;घर से आगे एक स्कूल है।
-[की जगह]{}”inplace of"(CASE-MARK,PLACE,IN_PLACE_OF,kI jagaha)<H,0,0>किताब की जगह कलम है।
+[की जगह]{}”inplace of"(CASE-MARK,PLACE,IN_PLACE_OF,kI jagaha)<H,0,0>;किताब की जगह कलम है।
 [की ओर]{}”side"(CASE-MARK,DIRECTION,SIDE,kI ora)<H,0,0>;गोपाल घर की ओर गया है।
 [की तरफ]{}”side"(CASE-MARK,DIRECTION,SIDE,kI waraPa)<H,0,0>;गोपाल घर की तरफ गया है।
 [के प्रति]{}”towards"(CASE-MARK,DIRECTION,TOWARDS,ke prawi)<H,0,0>;दूसरे के प्रति प्रेम रखो।

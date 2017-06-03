@@ -209,15 +209,71 @@ namespace DictionaryTest
 
                     var lines = await FileIO.ReadLinesAsync(file);
                     List<string> importedList = lines.ToList<string>();
+                    List<string> errors = new List<string>();
 
-                    foreach(var i in importedList)
+                    foreach (var i in importedList)
                     {
-                        Debug.WriteLine(i);
+                        Debug.WriteLine("PROCESSING: " + i);
+                        Debug.WriteLine("");
+                        string[] delimiters = { "[", "]\"", "]”", "]{}\"", "]{}”", "\"(", "”(", ")<", ">;" };
+                        string[] data = i.Split(delimiters, StringSplitOptions.None);
+
+                        string term, def, posstr, ex;
+                        string[] pos;
+                        
+
+                        if(data.Length == 6)
+                        {
+                         
+                            term = data[1];
+
+                            if (!String.IsNullOrEmpty(data[2]))
+                                def = data[2];
+                            else
+                                def = "";
+
+                            pos = data[3].Split(new char[] { ',' }, 1);
+                            posstr = pos[0];
+
+                            if (!String.IsNullOrEmpty(data[5]))
+                                ex = data[5];
+                            else
+                                ex = "";
+
+                            dbh.Insert(new Definition(term, def, posstr, ex));
+                        }
+
+                        else
+                        {
+                            errors.Add(i);
+                            errors.Add("");
+                            Debug.WriteLine("ERROR ON IMPORT - ADDED TO LOG");
+                            Debug.WriteLine("");
+                            for(int j=0;j<data.Length;j++)
+                            {
+                                Debug.WriteLine("data " + j + ": " + data[j]);
+                                errors.Add("data " + j + ": " + data[j]);
+                            }
+                            errors.Add("");
+                        }
+
+
+
+                        Debug.WriteLine("");
                     }
                     //return true;
+
+                    errors.ForEach(y => Debug.WriteLine(y));
+
+                    RefreshDefinitions();
+
                     ImportProgress.IsActive = false;
                     ImportProgress.Visibility = Visibility.Collapsed;
+
+                    
                 }
+                    
+                
                 else
                 {
                     //return false;

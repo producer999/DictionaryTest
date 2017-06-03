@@ -43,6 +43,48 @@ namespace DictionaryTest
             
         }
 
+        public Definition(string importedTerm, string importedDef, string pos, string example)
+        {
+            term = importedTerm;
+            importedDefinition = importedDef;
+            this.example = example;
+            
+            switch(pos)
+            {
+                case "N":
+                    this.pos = PartsOfSpeech.NounF;
+                    break;
+                case "V":
+                    this.pos = PartsOfSpeech.VerbNT;
+                    break;
+                case "ADV":
+                    this.pos = PartsOfSpeech.Adverb;
+                    break;
+                case "ADJ":
+                    this.pos = PartsOfSpeech.Adjective;
+                    break;
+                case "PRON":
+                    this.pos = PartsOfSpeech.Pronoun;
+                    break;
+                case "CONJ":
+                    this.pos = PartsOfSpeech.Conjunction;
+                    break;
+                case "INTJ":
+                    this.pos = PartsOfSpeech.Interjections;
+                    break;
+                case "POSTPOSTN":
+                    this.pos = PartsOfSpeech.Postposition;
+                    break;
+                case "CASE-MARK":
+                    this.pos = PartsOfSpeech.CaseMarker;
+                    break;
+                default:
+                    this.pos = PartsOfSpeech.Other;
+                    break;
+            }
+           
+        }
+
         public Definition(string newTerm, string newDefinition, string newGoogleDef)
         {
             term = newTerm;
